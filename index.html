@@ -1,31 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style rel="stylesheet" href="styles.css"></style>
-</head>
-<body>
-    <p>Hello, I am Piyush</p>
-    
-    <h2>this is example</h2>
-    <h1>Welcome to My Website</h1>
-    <div>this is a div
-        <div>this is div inside of div
-            great example of div inside of div
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Piyush is a creative learner and front-end developer building polished digital experiences."
+    />
+    <title>Piyush | Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-grid"></div>
+
+    <header class="topbar">
+      <div class="brand">Piyush</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+        🌙 Dark
+      </button>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Creative • Curious • Driven</p>
+          <h1>
+            I build <span>beautiful ideas</span>
+            into digital experiences.
+          </h1>
+          <p id="greetingText" class="greeting">
+            I’m a passionate learner turning concepts into clean, modern web experiences with energy, structure, and creativity.
+          </p>
+
+          <div class="controls">
+            <input
+              id="nameInput"
+              type="text"
+              placeholder="Type your name here"
+              aria-label="Your name"
+            />
+            <button id="greetButton" type="button">Say hello</button>
+          </div>
+
+          <div class="quick-links">
+            <a href="#projects" class="secondary-btn">View projects</a>
+            <a href="#about" class="ghost-btn">Learn more</a>
+          </div>
+
+          <div class="meta-row">
+            <span class="status-dot"></span>
+            <p id="dateText" class="meta"></p>
+          </div>
         </div>
-    </div>
-    <div>this is another div
-        <div>this is div inside of div
-            great example of div inside of div
+
+        <div class="hero-panel" aria-label="Profile summary">
+          <div class="profile-card">
+            <div class="avatar">P</div>
+            <div>
+              <h2>Front-end learner</h2>
+              <p>Focused on UI design, user experience, and strong visual storytelling.</p>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div>
+              <strong>3+</strong>
+              <span>Projects</span>
+            </div>
+            <div>
+              <strong>10k+</strong>
+              <span>Creative hours</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Momentum</span>
+            </div>
+          </div>
+
+          <div class="mini-panel">
+            <span>Available for</span>
+            <strong>Learning & building</strong>
+          </div>
         </div>
-    </div>this is another div
-    <div>this is another div
-        <div>this is div inside of div
-            great example of div inside of div
+      </section>
+
+      <section class="metrics-bar" aria-label="Key metrics">
+        <div>
+          <strong>Fast</strong>
+          <span>Responsive UX</span>
         </div>
-    </div>
+        <div>
+          <strong>Clean</strong>
+          <span>Thoughtful design</span>
+        </div>
+        <div>
+          <strong>Smart</strong>
+          <span>Practical coding</span>
+        </div>
+        <div>
+          <strong>Growing</strong>
+          <span>Always learning</span>
+        </div>
+      </section>
+
+      <section id="about" class="details-grid">
+        <article class="info-card">
+          <p class="section-kicker">About</p>
+          <h3>Designing with intention.</h3>
+          <p>
+            I’m a learner and developer who enjoys blending clean structure with visual creativity.
+            My work focuses on building smooth, modern interfaces that feel premium and easy to use.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <p class="section-kicker">Passion</p>
+          <h3>Turning ideas into real experiences.</h3>
+          <p>
+            I love experimenting with layout, interaction, and storytelling through code.
+            Every project is a chance to sharpen my craft and build something people actually enjoy.
+          </p>
+        </article>
+      </section>
+
+      <section id="projects" class="cards" aria-label="Project highlights">
+        <article class="card feature-card">
+          <span class="chip">UI/UX</span>
+          <h2>Landing page design</h2>
+          <p>Building structured, visually appealing pages with confident branding and a strong user flow.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="chip">CSS</span>
+          <h2>Modern styling</h2>
+          <p>Using gradients, spacing, shadows, and responsive patterns to create premium visual impact.</p>
+        </article>
+
+        <article class="card feature-card">
+          <span class="chip">JavaScript</span>
+          <h2>Interactive experience</h2>
+          <p>Adding dynamic behavior and meaningful feedback so the project feels polished and alive.</p>
+        </article>
+      </section>
+
+      <section id="process" class="process-section">
+        <div class="section-heading">
+          <p class="section-kicker">Process</p>
+          <h3>How I build things</h3>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="step">01</span>
+            <div>
+              <h4>Research</h4>
+              <p>Understand the goal, the audience, and the feel of the experience.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="step">02</span>
+            <div>
+              <h4>Design</h4>
+              <p>Map the structure and create a clear, modern visual direction.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="step">03</span>
+            <div>
+              <h4>Develop</h4>
+              <p>Convert the layout into responsive HTML, CSS, and JavaScript.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="step">04</span>
+            <div>
+              <h4>Improve</h4>
+              <p>Refine the details, polish the motion, and make the experience shine.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section" id="skills">
+        <div class="section-heading">
+          <p class="section-kicker">Skills</p>
+          <h3>What I’m working with</h3>
+        </div>
+        <div class="skills">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>Responsive Design</span>
+          <span>UI Basics</span>
+          <span>Problem Solving</span>
+          <span>Creative Thinking</span>
+          <span>Web Growth</span>
+        </div>
+      </section>
+
+      <section id="contact" class="cta-panel">
+        <div>
+          <p class="section-kicker">Let’s connect</p>
+          <h3>Ready to build something meaningful?</h3>
+        </div>
+        <a href="mailto:piyush@example.com" class="secondary-btn">Say hello</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with focus, curiosity, and a lot of learning.</p>
+    </footer>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
