@@ -3,6 +3,8 @@ const greetButton = document.getElementById("greetButton");
 const greetingText = document.getElementById("greetingText");
 const dateText = document.getElementById("dateText");
 const themeToggle = document.getElementById("themeToggle");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
 
 const formatDate = () => {
   const now = new Date();
@@ -18,7 +20,6 @@ const formatDate = () => {
 
 const getTimeMessage = () => {
   const hour = new Date().getHours();
-
   if (hour < 12) return "Good morning";
   if (hour < 18) return "Good afternoon";
   return "Good evening";
@@ -28,8 +29,7 @@ const updateGreeting = () => {
   const name = nameInput.value.trim();
   const friendlyName = name || "friend";
   const timeMessage = getTimeMessage();
-
-  greetingText.textContent = `${timeMessage}, ${friendlyName}! I’m building creative digital experiences and learning something new with every line of code.`;
+  greetingText.textContent = `${timeMessage}, ${friendlyName}! I craft memorable digital experiences and keep learning something new every single day.`;
 };
 
 const applyTheme = (isDark) => {
@@ -48,10 +48,23 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.12 }
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedFilter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+
+    projectCards.forEach((card) => {
+      const matches = selectedFilter === "all" || card.dataset.category === selectedFilter;
+      card.classList.toggle("hidden", !matches);
+    });
+  });
+});
 
 const savedTheme = localStorage.getItem("theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
