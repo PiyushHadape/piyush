@@ -16,10 +16,20 @@ const formatDate = () => {
   });
 };
 
+const getTimeMessage = () => {
+  const hour = new Date().getHours();
+
+  if (hour < 12) return "Good morning";
+  if (hour < 18) return "Good afternoon";
+  return "Good evening";
+};
+
 const updateGreeting = () => {
   const name = nameInput.value.trim();
   const friendlyName = name || "friend";
-  greetingText.textContent = `Hello, ${friendlyName}! I’m building creative digital experiences and learning something new every single day.`;
+  const timeMessage = getTimeMessage();
+
+  greetingText.textContent = `${timeMessage}, ${friendlyName}! I’m building creative digital experiences and learning something new with every line of code.`;
 };
 
 const applyTheme = (isDark) => {
@@ -27,6 +37,21 @@ const applyTheme = (isDark) => {
   themeToggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
   localStorage.setItem("theme", isDark ? "dark" : "light");
 };
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealElements.forEach((element) => observer.observe(element));
 
 const savedTheme = localStorage.getItem("theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
